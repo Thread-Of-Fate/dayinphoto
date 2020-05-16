@@ -1,0 +1,215 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+ 
+
+.dayinphoto {
+	/* .dayinphoto__heading-title */
+	&__heading-title {
+		position: relative;
+		text-transform: uppercase;
+		padding: 40px 0 30px;
+		color: #010101;
+		font-weight: 400;
+		font-size: 40px;
+		line-height: 18px;
+		font-family: 'Playfair Display', serif;
+		&:after {
+			position: absolute;
+			content: "";
+			width: 420px;
+			height: 2px;
+			display: block;
+			background-color: #010101;
+			left: 280px;
+			bottom: 25px;
+		}
+	}
+	/* .dayinphoto__heading-picture */
+	&__heading-picture {
+		position: relative;
+	}
+	&__heading-text {
+		padding: 20px 0;
+		line-height: 18px;
+		font-size: 13px;
+		font-family: "Noto Sans";
+	}
+	/* .dayinphoto__heading-image */
+	&__heading-image {
+		width: 100%;
+		height: 100%;
+	}
+	/* .dayinphoto__heading-date */
+	&__heading-date {
+		top: 20px;
+		left: 20px;
+		position: absolute;
+		width: 160px;
+		height: 105px;
+		font-family: "Noto Serif";
+		font-weight: 400;
+		text-align: center;
+		display: flex;
+		justify-content: center;	
+		align-items: center;
+		flex-direction: column;
+		color: #000000;
+		background: rgba(#fff, 0.75);
+	}
+	/* .dayinphoto__heading-day */
+	&__heading-day,
+	.dayinphoto__main-day {
+		font-size: 36px;
+		line-height: 24px;
+	}
+	/* .dayinphoto__heading-month */
+	&__heading-month,
+	.dayinphoto__main-month {
+		font-size: 20px;
+		line-height: 24px;
+	}
+	/* .dayinphoto__heading-place */
+	&__heading-place {
+		color: #000;
+		font-weight: 700;
+		padding-bottom: 10px;
+	}
+	/* .dayinphoto__heading-author */
+	&__heading-author {
+		color: #acacac;
+		font-weight: 400;
+	}
+	&__main-datecards {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__main-cards {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__main-item &__main-card {
+		&:nth-child(6),
+		&:nth-child(7),
+		&:nth-child(10),
+		&:nth-child(17),
+		&:nth-child(18),
+		&:nth-child(23){
+			display: none;
+		}
+	}
+	&__main-card {
+		width: 160px;
+		height: 102px;
+	}
+	&__main-cardimage {
+		width: 100%;
+		height: 100%;
+	}
+	&__main-datecard {
+		position: relative;
+		margin-right: 20px;
+		width: 160px;
+		height: 102px;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		&:after {
+			position: absolute;
+			content: "";
+			right: 8px;
+			top: 45%;
+			height: 5px;
+			width: 3px;
+			border: 2px solid transparent;
+			border-left: 3px solid #000;
+		}
+	}
+	/* .dayinphoto__main-item */
+	&__main-item {
+		display: none;
+	}
+	&__main-item.active {
+		display: grid;
+		grid-template-areas: ". . . b"
+												 ". . . b"
+												 ". . . ."
+												 ". . . ."
+												 ". . . d"
+												 ". . . d"
+												 ". . . .";
+		grid-gap: 20px;
+		grid-template-columns: 160px 160px 160px 160px;
+		position: relative;
+	}
+	&__main-banner {
+		grid-area: b;
+		background-image: url('../img/banner-480.jpg');
+		width: 160px;
+		height: 220px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		&--2 {
+			grid-area: d;
+			background-image: url('../img/banner-768.jpg');
+			width: 160px;
+			height: 220px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+	/* .dayinphoto__bottom */
+	&__bottom {
+		padding-top: 20px;
+		padding-bottom: 30px;
+	}
+}
+.dayinphoto-pages {
+	display: flex;
+	/* .dayinphoto-pages__descr */
+	&__descr {
+		margin-right: 37px;
+		font-size: 13px;
+		line-height: 18px;
+		color: #848484;
+		font-family: "Noto Sans";
+		font-weight: 400;
+	}
+	/* .dayinphoto-pages__tabs */
+	&__tabs {
+		display: flex;
+	}
+	/* .dayinphoto-pages__tab */
+	&__tab {
+		cursor: pointer;
+		margin-right: 17px;
+		font-size: 13px;
+		line-height: 18px;
+		color: #000000;
+		font-family: "Noto Sans";
+		font-weight: 400;
+		width: 20px;
+		height: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&.active {
+			font-weight: 700;
+		}
+	}
+	/* .dayinphoto-pages__next */
+	&__next {
+		cursor: pointer;
+		padding: 0 15px;
+		font-size: 13px;
+		line-height: 18px;
+		color: #000000;
+		font-family: "Noto Sans";
+		font-weight: 400;
+	}
+}
+@import "media";
